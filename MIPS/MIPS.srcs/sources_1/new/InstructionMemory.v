@@ -28,7 +28,7 @@ module InstructionMemory(ADDR, instr);
     reg [7:0] MEM [num_lines-1:0];
     
     initial begin
-        $readmemh("instr.mem", MEM);
+        $readmemb("instr.mem", MEM);
     end
     
     assign instr = {MEM[ADDR], MEM[ADDR + 1], MEM[ADDR + 2], MEM[ADDR + 3]};

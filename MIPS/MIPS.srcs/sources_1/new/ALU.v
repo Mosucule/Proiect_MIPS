@@ -24,6 +24,7 @@ module ALU(A, B, ALUOP, ZERO, DOUT);
     input [31:0] A, B;
     input [3:0] ALUOP;
     output reg [31:0] DOUT;
+    output ZERO;
     
     always@(A or B or ALUOP)begin
         case(ALUOP)
