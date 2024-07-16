@@ -21,9 +21,9 @@
 
 
 module top_tb;
-    reg clk, reset;
+    reg clk;
     
-    top top_tb(.clk(clk), .reset(reset));
+    top top_tb(.clk(clk));
     
     initial begin
         clk = 0;
@@ -31,8 +31,6 @@ module top_tb;
     end
     
     initial begin
-        #0 reset = 1;
-        #10 reset = 0;
         #1000 $finish;
     end
 endmodule

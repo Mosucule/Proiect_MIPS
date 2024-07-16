@@ -29,22 +29,28 @@ module ALU(A, B, ALUOP, ZERO, DOUT);
     always@(A or B or ALUOP)begin
         case(ALUOP)
             4'b0000: begin
-                DOUT <= A & B;
+                DOUT = A & B;
             end
             4'b0001: begin
-                DOUT <= A | B;
+                DOUT = A | B;
             end
             4'b0010: begin
-                DOUT <= A + B;
+                DOUT = A + B;
             end
             4'b0110: begin
-                DOUT <= A - B;
+                DOUT = A - B;
             end
             4'b0111: begin
-                DOUT <= (A < B);
+                DOUT = (A < B);
             end
             4'b1100: begin
-                DOUT <= ~(A | B);
+                DOUT = ~(A | B);
+            end
+            4'b1000: begin
+                DOUT = A<<B;
+            end
+            4'b1001: begin
+                DOUT = A>>B;
             end
          endcase
     end

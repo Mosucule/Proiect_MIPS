@@ -35,9 +35,12 @@ module RegisterBank(clk, RA1, RA2, WA, WD, regWrite, RD1, RD2);
         end
     end
     
-    always@(posedge clk)begin
+    always@(negedge clk)begin
         RD1 = REG[RA1];
         RD2 = REG[RA2];
+    end
+    
+    always@(posedge clk)begin
         if(regWrite)begin
             REG[WA] = WD;
         end

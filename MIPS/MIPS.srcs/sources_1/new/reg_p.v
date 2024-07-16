@@ -20,16 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module reg_p(clk, din, dout, reset);
-    input clk, reset;
+module reg_p(clk, din, dout);
+    input clk;
     input [31:0] din;
-    output reg [31:0] dout = 0;
+    output reg [31:0] dout = 32'hFFFFFFFC;
     
     always@(posedge clk)begin
-        if(reset)
-            dout = 32'b0;
-        else
-            dout = din;
+        dout = din;
     end
     
 endmodule
