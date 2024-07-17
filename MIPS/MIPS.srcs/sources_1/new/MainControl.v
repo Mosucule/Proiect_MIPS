@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, MemWrite, Mem2Reg, SH);
+module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, MemWrite, Mem2Reg, SH, BR, JMP, Reg2PC, PC2Reg);
     input [5:0] opcode, func;
     input zero;
-    output reg RegDst, RegWrite, ExtOp, AluSrc, MemWrite, Mem2Reg, SH;
+    output reg RegDst, RegWrite, ExtOp, AluSrc, MemWrite, Mem2Reg, SH, BR = 0, JMP = 0, Reg2PC = 0, PC2Reg;
     output reg [3:0] AluOp;
     
     always@(opcode or func or zero)begin
@@ -38,6 +38,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h22: begin
                     RegDst = 1;
@@ -48,6 +52,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h24: begin
                     RegDst = 1;
@@ -58,6 +66,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h25: begin
                     RegDst = 1;
@@ -68,6 +80,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h2a: begin
                     RegDst = 1;
@@ -78,6 +94,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h27: begin
                     RegDst = 1;
@@ -88,6 +108,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h00: begin
                     RegDst = 1;
@@ -98,6 +122,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 1;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h02: begin
                     RegDst = 1;
@@ -108,6 +136,24 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 1;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
+                end
+                6'h08: begin
+                    RegDst = 1;
+                    RegWrite = 0;
+                    ExtOp = 0;
+                    AluSrc = 0;
+                    AluOp = 4'b0010;
+                    MemWrite = 0;
+                    Mem2Reg = 1;
+                    SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 1;
+                    PC2Reg = 0;
                 end
             endcase
         end
@@ -122,6 +168,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'hc: begin
                     RegDst = 0;
@@ -132,6 +182,10 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 1;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
                 end
                 6'h23: begin
                     RegDst = 0;
@@ -142,6 +196,80 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                     MemWrite = 0;
                     Mem2Reg = 0;
                     SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
+                end
+                6'h2b: begin
+                    RegDst = 0;
+                    RegWrite = 0;
+                    ExtOp = 1;
+                    AluSrc = 1;
+                    AluOp = 4'b0010;
+                    MemWrite = 1;
+                    Mem2Reg = 0;
+                    SH = 0;
+                    BR = 0;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
+                end
+                6'h4: begin
+                    RegDst = 0;
+                    RegWrite = 0;
+                    ExtOp = 1;
+                    AluSrc = 0;
+                    AluOp = 4'b0110;
+                    MemWrite = 0;
+                    Mem2Reg = 0;
+                    SH = 0;
+                    BR = zero;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
+                end
+                6'h5: begin
+                    RegDst = 0;
+                    RegWrite = 0;
+                    ExtOp = 1;
+                    AluSrc = 0;
+                    AluOp = 4'b0110;
+                    MemWrite = 0;
+                    Mem2Reg = 0;
+                    SH = 0;
+                    BR = ~zero;
+                    JMP = 0;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
+                end
+                6'h2: begin
+                    RegDst = 0;
+                    RegWrite = 0;
+                    ExtOp = 1;
+                    AluSrc = 0;
+                    AluOp = 4'b0110;
+                    MemWrite = 0;
+                    Mem2Reg = 0;
+                    SH = 0;
+                    BR = 0;
+                    JMP = 1;
+                    Reg2PC = 0;
+                    PC2Reg = 0;
+                end
+                6'h3: begin
+                    RegDst = 0;
+                    RegWrite = 0;
+                    ExtOp = 1;
+                    AluSrc = 0;
+                    AluOp = 4'b0110;
+                    MemWrite = 0;
+                    Mem2Reg = 0;
+                    SH = 0;
+                    BR = 0;
+                    JMP = 1;
+                    Reg2PC = 0;
+                    PC2Reg = 1;
                 end
             endcase
         end

@@ -21,7 +21,7 @@
 
 
 module DataMemory(clk, ADDR, WD, MemWrite, RD);
-    parameter num_lines = 100;
+    parameter num_lines = 32'hFFFF;
     input clk, MemWrite;
     input [31:0] ADDR, WD;
     output reg [31:0] RD;
@@ -40,6 +40,8 @@ module DataMemory(clk, ADDR, WD, MemWrite, RD);
         if(MemWrite)begin
             {MEM[ADDR], MEM[ADDR + 1], MEM[ADDR + 2], MEM[ADDR + 3]} <= WD;
         end
+    end
+    always@(negedge clk)begin
         RD = {MEM[ADDR], MEM[ADDR + 1], MEM[ADDR + 2], MEM[ADDR + 3]};
     end
 endmodule

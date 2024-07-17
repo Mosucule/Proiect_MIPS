@@ -21,7 +21,7 @@
 
 
 module InstructionMemory(ADDR, instr);
-    parameter num_lines = 100;
+    parameter num_lines = 32'hFFFF;
     input [31:0] ADDR;
     output [31:0] instr;
     
