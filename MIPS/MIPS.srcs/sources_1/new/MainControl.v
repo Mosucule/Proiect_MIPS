@@ -259,7 +259,7 @@ module MainControl(opcode, func, zero, RegDst, RegWrite, ExtOp, AluSrc, AluOp, M
                 end
                 6'h3: begin
                     RegDst = 0;
-                    RegWrite = 0;
+                    RegWrite = 1;
                     ExtOp = 1;
                     AluSrc = 0;
                     AluOp = 4'b0110;
