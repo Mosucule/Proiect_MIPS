@@ -20,8 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top(clk);
-    input clk;
+module top(clk, clk_p, din, dout, A1, A2, A3, A4, a, b, c, d, e, f, g);
+    input clk, clk_p;
+    input [14:0] din;
+    output [15:0] dout;
+    output A1, A2, A3, A4, a, b, c, d, e, f, g;
     
     wire [31:0] pc_new, pc_out, alu_4, pc_br, pc_jmp, pc_imm, RegData, RegADDR;
     
@@ -38,6 +41,11 @@ module top(clk);
     wire [31:0] AluD2, AluOut;
     
     wire [31:0] MemOut;
+    wire [15:0] digit_in;
+    
+    //afisare digiti
+    digit digit1(.clk(clk_p), .din(digit_in), .A1(A1), .A2(A2), .A3(A3), .A4(A4), .a(a), .b(b), .c(c), .d(d), .e(e), .f(f), .g(g));
+    //-----
     
     reg_p PC(.clk(clk), .din(pc_new), .dout(pc_out));
     alu_sum sum_pc(.a(pc_out), .b(32'd4), .out(alu_4));
@@ -62,7 +70,7 @@ module top(clk);
     
     ALU ALU1(.A(RD1), .B(AluD2), .ALUOP(AluOp), .ZERO(Zero), .DOUT(AluOut));
     
-    DataMemory RAM(.clk(clk), .ADDR(AluOut), .WD(RD2), .MemWrite(MemWrite), .RD(MemOut));
+    DataMemory RAM(.clk(clk), .ADDR(AluOut), .WD(RD2), .MemWrite(MemWrite), .RD(MemOut), .din({1'b0, din}), .dout({digit_in, dout}));
     
     mux2_p mem2reg(.I0(MemOut), .I1(AluOut), .sel(Mem2Reg), .OUT(WD));
     

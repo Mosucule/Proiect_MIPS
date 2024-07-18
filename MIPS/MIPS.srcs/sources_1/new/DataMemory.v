@@ -20,17 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DataMemory(clk, ADDR, WD, MemWrite, RD);
-    parameter num_lines = 32'hFFFF;
+module DataMemory(clk, ADDR, WD, MemWrite, RD, din, dout);
     input clk, MemWrite;
     input [31:0] ADDR, WD;
+    input [15:0] din;
+    output [31:0] dout;
     output reg [31:0] RD;
     
-    reg [7:0] MEM [num_lines-1:0];
+    reg [7:0] MEM [32'hFFFF:0];
     
     integer i;
     initial begin
-        for(i = 0; i < num_lines; i = i + 1)begin
+        for(i = 0; i <= 32'hFFFF; i = i + 1)begin
             MEM[i] = 32'b0;
         end
     end
@@ -44,4 +45,10 @@ module DataMemory(clk, ADDR, WD, MemWrite, RD);
     always@(negedge clk)begin
         RD = {MEM[ADDR], MEM[ADDR + 1], MEM[ADDR + 2], MEM[ADDR + 3]};
     end
+    
+    always@(din)begin
+        {MEM[32'hFFFE], MEM[32'hFFFF]} = din;
+    end
+    
+    assign dout = {MEM[32'hFFF8], MEM[32'hFFF9], MEM[32'hFFFA], MEM[32'hFFFB]};
 endmodule

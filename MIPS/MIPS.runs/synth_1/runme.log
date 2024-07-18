@@ -1,0 +1,134 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1461.039 ; gain = 160.527
+Command: synth_design -top top -part xc7z007sclg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6120
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2277.680 ; gain = 408.949
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'digit' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/digit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'div_t' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/div_t.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'div_t' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/div_t.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux.v:23]
+INFO: [Synth 8-6157] synthesizing module 'cnt' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/cnt.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'cnt' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/cnt.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dig_dec' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dig_dec.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dig_dec' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dig_dec.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dec2_4' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dec2_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2_4' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dec2_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'digit' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/digit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'reg_p' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/reg_p.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reg_p' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/reg_p.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu_sum' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/alu_sum.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'alu_sum' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/alu_sum.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2_p' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_p' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/InstructionMemory.v:23]
+INFO: [Synth 8-3876] $readmem data file 'instr.mem' is read successfully [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/InstructionMemory.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/InstructionMemory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2_p__parameterized0' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+	Parameter width bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2_p__parameterized0' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegisterBank' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/RegisterBank.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterBank' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/RegisterBank.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'WA' does not match port width (5) of module 'RegisterBank' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/top.v:65]
+INFO: [Synth 8-6157] synthesizing module 'ExtSign' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ExtSign.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ExtSign' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ExtSign.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ALU.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/DataMemory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/DataMemory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MainControl' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:31]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'MainControl' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/top.v:23]
+WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/div_t.v:34]
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1461.473 ; gain = 160.184
+Command: synth_design -top top -part xc7z007sclg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3048
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2277.430 ; gain = 409.395
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'digit' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/digit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'div_t' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/div_t.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'div_t' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/div_t.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux.v:23]
+INFO: [Synth 8-6157] synthesizing module 'cnt' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/cnt.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'cnt' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/cnt.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dig_dec' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dig_dec.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dig_dec' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dig_dec.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dec2_4' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dec2_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2_4' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/dec2_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'digit' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/digit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'reg_p' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/reg_p.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reg_p' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/reg_p.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu_sum' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/alu_sum.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'alu_sum' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/alu_sum.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2_p' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_p' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/InstructionMemory.v:23]
+INFO: [Synth 8-3876] $readmem data file 'instr.mem' is read successfully [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/InstructionMemory.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/InstructionMemory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2_p__parameterized0' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+	Parameter width bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2_p__parameterized0' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/mux2_p.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegisterBank' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/RegisterBank.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterBank' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/RegisterBank.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'WA' does not match port width (5) of module 'RegisterBank' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/top.v:65]
+INFO: [Synth 8-6157] synthesizing module 'ExtSign' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ExtSign.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ExtSign' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ExtSign.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ALU.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/DataMemory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/DataMemory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MainControl' [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:31]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'MainControl' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/MainControl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/top.v:23]
+WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [C:/Users/training/Internship_Silviu/MIPS_Proiect/MIPS/MIPS.srcs/sources_1/new/div_t.v:34]
