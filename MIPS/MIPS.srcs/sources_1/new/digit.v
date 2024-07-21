@@ -29,7 +29,7 @@ module digit(clk, din, A1, A2, A3, A4, a, b, c, d, e, f, g);
     wire [1:0] cnt_o;
     wire clk_d;
     
-    div_t div_1(clk, 11000000, 1, clk_d); // 11 000 000 trebuie pus ca sa mearga pe placa
+    div_t div_1(clk, 55488, 1, clk_d); // 55 488 trebuie pus ca sa mearga pe placa
     mux mux_1(cnt_o, din, mux_o);
     cnt cnt_1(clk_d, cnt_o);
     dig_dec dig_dec_1(mux_o, a, b, c, d, e, f, g);

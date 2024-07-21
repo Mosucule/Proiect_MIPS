@@ -1,4 +1,0 @@
-ERROR: Exception caught trying to open file C:\Users\training\Internship_Silviu\MIPS_Proiect\MIPS\MIPS.runs\synth_1/runme.log
-	Exception name: Error
-	Exception error code: 70
-	Exception message: Permission denied

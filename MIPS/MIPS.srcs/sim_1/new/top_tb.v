@@ -21,9 +21,11 @@
 
 
 module top_tb;
-    reg clk;
-    
-    top top_tb(.clk(clk));
+    reg clk, clk_p;
+    wire A1, A2, A3, A4, a, b, c, d, e, f, g;
+    reg [14:0] din;
+    wire [15:0] dout;
+    top top_tb(.clk(clk), .clk_p(clk_p), .din(din), .dout(dout), .A1(A1), .A2(A2), .A3(A3), .A4(A4), .a(a), .b(b), .c(c), .d(d), .e(e), .f(f), .g(g));
     
     initial begin
         clk = 0;
@@ -31,6 +33,7 @@ module top_tb;
     end
     
     initial begin
-        #1000 $finish;
+        #0 din = 14'b0; clk_p = 0;
+        #240 $finish;
     end
 endmodule

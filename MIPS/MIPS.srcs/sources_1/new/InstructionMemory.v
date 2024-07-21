@@ -21,11 +21,10 @@
 
 
 module InstructionMemory(ADDR, instr);
-    parameter num_lines = 32'hFFFF;
     input [31:0] ADDR;
     output [31:0] instr;
     
-    reg [7:0] MEM [num_lines-1:0];
+    reg [7:0] MEM [32'hFFFF-1:0];
     
     initial begin
         $readmemb("instr.mem", MEM);
